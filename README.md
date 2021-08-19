@@ -78,3 +78,44 @@ public class SkillService {
     }
 }
     
+    
+package com.cloud.kk.consumer2.controller.entity;
+
+import lombok.Data;
+
+import java.io.Serializable;
+
+@Data
+public class Killer implements Serializable {
+
+    private Long user_id;
+    private String user_name;
+    private Long good_id;
+
+    public Killer(){}
+
+    public Killer(Long user_id,String user_name,Long good_id){
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.good_id = good_id;
+    }
+}
+
+
+
+package com.cloud.kk.consumer2.controller.entity;
+
+import lombok.Data;
+
+@Data
+public class Order {
+    private Long order_id;
+    private Long user_id;
+    private String user_name;
+    private Long good_id;
+    private Long good_count;
+    private Double price;
+
+    public Order(){};
+}
+    
