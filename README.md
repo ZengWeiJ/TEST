@@ -30,9 +30,9 @@ public class DelayQueueConfig {
     @Bean
     public Queue delayQueue(){
         Map<String,Object> map = new HashMap<>();
-        map.put("x-message-ttl",60000);
-        map.put("x-dead-letter-exchange","dead.exchange");
-        map.put("x-dead-letter-routing-key","dead.order");
+        map.put("x-message-ttl",60000);//设置消息过期时间
+        map.put("x-dead-letter-exchange","dead.exchange");//绑定死信交换机
+        map.put("x-dead-letter-routing-key","dead.order");//绑定路由key
         return new Queue("delay.queue",true,false,false,map);
     }
 
